@@ -35,9 +35,9 @@
     <img src="/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">TODO Title Best-README-Template</h3>
 
-  <p align="center">
+  <p align="center">TODO 
     An awesome README template to jumpstart your projects!
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
@@ -128,9 +128,9 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* TODO
   ```sh
-  npm install npm@latest -g
+  TODO
   ```
 
 ### Installation
@@ -144,11 +144,11 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 3. Install NPM packages
    ```sh
-   npm install
+   TODO
    ```
 4. Enter your API in `config.js`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   TODO
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
