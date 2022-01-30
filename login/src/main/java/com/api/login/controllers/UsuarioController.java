@@ -32,18 +32,28 @@ public class UsuarioController {
     }
 
     @PostMapping("/usuarios/registrar")
-    public Map<Status, Usuario> adminRegistraUsuario(@Valid @RequestBody Map<Usuario, Usuario> adminNovoUsuario) {
+    public Map<Status, Usuario> adminRegistraUsuario(@Valid @RequestBody List<Usuario> adminNovoUsuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
+
         Map<Status, Usuario> retorno = new HashMap<>();
-        System.out.println("Novo Usuario: " + adminNovoUsuario.get(0).toString());
-        for (Usuario usuario : usuarios) {
-            if (usuario.equals(adminNovoUsuario.values())) {
-                retorno.put(Status.USUARIO_JA_EXISTE, null);
-                System.out.println("Usuario já existe!");
-                return retorno;
+
+        for (Usuario admin : usuarios) {
+            if (admin.equals(adminNovoUsuario.get(0)) && admin.getFuncao().equals("admin")) {
+                adminNovoUsuario.get(0).setLogado(true);
+                usuarioRepositorio.save(adminNovoUsuario.get(0));
+                for (Usuario usuario : usuarios) {
+                    if (usuario.equals(adminNovoUsuario.get(1))) {
+                        retorno.put(Status.USUARIO_JA_EXISTE, null);
+                        System.out.println("Usuario já existe!");
+                        return retorno;
+                    }
+                    retorno.put(Status.SUCESSO, adminNovoUsuario.get(1));
+                    usuarioRepositorio.save(adminNovoUsuario.get(1));
+                    return retorno;
+                }
             }
         }
-        retorno.put(Status.SUCESSO, adminNovoUsuario.get(0));
+        retorno.put(Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO, null);
         usuarioRepositorio.save(adminNovoUsuario.get(0));
         return retorno;
     }
@@ -64,22 +74,18 @@ public class UsuarioController {
     }
 
     @PostMapping("/usuarios/admin")
-    //public Map<Status, List<Usuario>> acessoRestritoAoAdmin(@Valid @RequestBody Usuario usuario) {
-    public Map<Usuario, Usuario> acessoRestritoAoAdmin(@Valid @RequestBody Usuario usuario) {
+    public Map<Status, List<Usuario>> acessoRestritoAoAdmin(@Valid @RequestBody Usuario usuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
-        //Map<Status, List<Usuario>> retorno = new HashMap<>();
-        Map<Usuario, Usuario> retorno = new HashMap<>();
+        Map<Status, List<Usuario>> retorno = new HashMap<>();
         for (Usuario esteUsuario : usuarios) {
             if (esteUsuario.equals(usuario) && esteUsuario.getFuncao().equals("admin")) {
                 usuario.setLogado(true);
                 usuarioRepositorio.save(usuario);
-                //retorno.put(Status.SUCESSO, usuarios);
-                retorno.put(usuario, usuario);
+                retorno.put(Status.SUCESSO, usuarios);
                 return retorno;
             }
         }
-        //retorno.put(Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO, null);
-        retorno.put(usuario, usuario);
+        retorno.put(Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO, null);
         usuarioRepositorio.save(usuario);
         return retorno;
     }
