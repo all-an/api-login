@@ -88,16 +88,6 @@
 
 Api-Login utilizando Java e Spring Boot 
 
-Dependências:
-
-* Spring Boot DevTools
-* Lombok
-* Spring Web
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -108,6 +98,13 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 * [Java](https://spring.io/projects/spring-boot)
 * [Spring](https://spring.io/projects/spring-boot)
+
+Dependências:
+
+* Spring Boot DevTools
+* Lombok
+* Spring Web
+
 <!--
 * [Vue.js](https://vuejs.org/)
 * [Angular](https://angular.io/)
@@ -170,13 +167,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Add . . .
+- [x] . . .
+- [ ] Add . . .
+- [ ] Add . . .
+- [ ] TODO
+    - [ ] . . .
+    - [ ] . . .
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
