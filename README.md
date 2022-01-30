@@ -18,7 +18,8 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-F2F4F9?style=for-the-badge&logo=spring-boot)
 [![Development  - In Progress](https://img.shields.io/badge/Development_-In_Progress-ffff00?style=for-the-badge)](https://)
 [![MIT License][license-shield]][license-url]
 ![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
@@ -35,7 +36,7 @@
     <img src="/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">TODO Title Best-README-Template</h3>
+  <h3 align="center">Api de Login com Java e Spring Boots</h3>
 
   <p align="center">TODO 
     An awesome README template to jumpstart your projects!
@@ -55,7 +56,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Índice</summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -82,13 +83,14 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre o projeto:
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Api-Login utilizando Java e Spring Boot 
 
-Here's why:
+Dependências:
+
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
 * You shouldn't be doing the same tasks over and over like creating a README from scratch
 * You should implement DRY principles to the rest of your life :smile:
