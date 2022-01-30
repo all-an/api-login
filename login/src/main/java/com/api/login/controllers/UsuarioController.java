@@ -47,7 +47,7 @@ public class UsuarioController {
         return Status.FALHA;
     }
 
-    @PostMapping("/usuarios/restrito")
+    @PostMapping("/usuarios/admin")
     public Map<Status, List<Usuario>> acessoRestritoAoAdmin(@Valid @RequestBody Usuario usuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
         Map<Status, List<Usuario>> retorno = new HashMap<>();

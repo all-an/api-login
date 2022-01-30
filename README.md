@@ -82,21 +82,21 @@
 
 ### Roadmap:
 
-[x] - Configurações iniciais
-   [x] - Banco de Dados MySQL, conexão e afins
-[x] - Criação de todas as entidades
-[ ] - Mapeamento de requisições
-   [x] - GET restrito ao "admin"
-   [x] - POST cadastro usuários
-   [x] - extra - Usuário não pode se cadastrar se já existe no DB
-   [ ] - Delete (Somente admin poderá deletar um usuário)
-   [ ] - Put (Somente admin poderá atualizar um usuário cadastrado)
-   [x] - "Usuário não possui esse nível de acesso"
-   [ ] - Validar os casos de uso quando um funcionário tentar deletar, atualizar ou ler os registros
-[ ] - Cobertura de testes >= 85%
-[x] - Registros no banco de dados
-[ ] - Validação dos casos
-[ ] - Senha salva com criptografia
+- [x] ● Configurações iniciais
+- [x] ● Banco de Dados MySQL, conexão e afins
+- [x] ● Criação de todas as entidades
+- [ ] ● Mapeamento de requisições
+   - [x] ● GET restrito ao "admin"
+   - [x] ● POST cadastro usuários
+   - [x] ● extra - Usuário não pode se cadastrar se já existe no DB
+   - [ ] ● Delete (Somente admin poderá deletar um usuário)
+   - [ ] ● Put (Somente admin poderá atualizar um usuário cadastrado)
+   - [x] ● "Usuário não possui esse nível de acesso"
+   - [ ] ●- Validar os casos de uso quando um funcionário tentar deletar, atualizar ou ler os registros
+- [ ] ● Cobertura de testes >= 85%
+- [x] ● Registros no banco de dados
+- [ ] ● Validação dos casos
+- [ ] ● Senha salva com criptografia
   
 <!-- ABOUT THE PROJECT -->
 ## Sobre o projeto:
