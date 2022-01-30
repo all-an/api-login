@@ -20,6 +20,7 @@
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-F2F4F9?style=for-the-badge&logo=spring-boot)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 ![Intellij](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
 [![MIT License][license-shield]][license-url]
 ![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
@@ -104,6 +105,10 @@ Dependências:
 * Spring Boot DevTools
 * Lombok
 * Spring Web
+* Spring MVC
+* Apache Tomcat
+* Spring Data JPA
+* MySQL Driver
 
 <!--
 * [Vue.js](https://vuejs.org/)
@@ -167,8 +172,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add . . .
-- [x] . . .
+- [x] Configurações iniciais. ( https://start.spring.io/ ) Spring Initializr
+- [ ] . . .
 - [ ] Add . . .
 - [ ] Add . . .
 - [ ] TODO
