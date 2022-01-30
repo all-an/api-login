@@ -6,12 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class UsuarioController {
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
+
+    @GetMapping
+    public List<Usuario> findAll(){
+        List<Usuario> resultado = usuarioRepositorio.findAll();
+        return resultado;
+    }
 
     @PostMapping("/usuarios/registro")
     public Status registraUsuario(@Valid @RequestBody Usuario novoUsuario) {
@@ -34,16 +41,16 @@ public class UsuarioController {
 
     @PostMapping("/usuarios/login")
     public Status loginUsuario(@Valid @RequestBody Usuario usuario) {
-        List<Usuario> Usuarios = usuarioRepositorio.findAll();
+        List<Usuario> usuarios = usuarioRepositorio.findAll();
 
-        for (Usuario other : Usuarios) {
+        for (Usuario other : usuarios) {
             if (other.equals(usuario)) {
                 usuario.setLogado(true);
                 usuarioRepositorio.save(usuario);
+                System.out.println(usuario);
                 return Status.SUCESSO;
             }
         }
-
         return Status.FALHA;
     }
 
@@ -58,7 +65,6 @@ public class UsuarioController {
                 return Status.SUCESSO;
             }
         }
-
         return Status.FALHA;
     }
 

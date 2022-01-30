@@ -27,7 +27,31 @@ public class Usuario {
     private @NotBlank String senha;
     @NonNull
     private @NotBlank boolean logado;
-    private @NotBlank String cargo;
+    private @NotBlank String funcao;
+
+    public long getId() {
+        return id;
+    }
+
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public void setUsername(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public boolean isLogado() {
+        return logado;
+    }
 
     public void setLogado(boolean logado) {
         this.logado = logado;
@@ -55,6 +79,7 @@ public class Usuario {
                 ", nomeUsuario='" + nomeUsuario + '\'' +
                 ", senha='" + senha + '\'' +
                 ", logado=" + logado +
+                ", cargo='" + funcao + '\'' +
                 '}';
     }
 }
