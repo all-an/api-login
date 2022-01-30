@@ -20,7 +20,7 @@
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-F2F4F9?style=for-the-badge&logo=spring-boot)
-[![Development  - In Progress](https://img.shields.io/badge/Development_-In_Progress-ffff00?style=for-the-badge)](https://)
+![Intellij](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
 [![MIT License][license-shield]][license-url]
 ![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
 
@@ -36,7 +36,7 @@
     <img src="/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Api de Login com Java e Spring Boots</h3>
+  <h3 align="center">Api de Login feita em Java e Spring Boots</h3>
 
   <p align="center">TODO 
     An awesome README template to jumpstart your projects!
@@ -91,9 +91,9 @@ Api-Login utilizando Java e Spring Boot
 
 Dependências:
 
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+* Spring Boot DevTools
+* Lombok
+* Spring Web
 
 Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
 
