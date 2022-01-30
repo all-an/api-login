@@ -32,23 +32,22 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://www.linkedin.com/in/allan-pereira-abrahao">
     <img src="/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Api de Login feita em Java e Spring Boots</h3>
 
-  <p align="center">TODO 
-    An awesome README template to jumpstart your projects!
+  <p align="center">
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://www.linkedin.com/in/allan-pereira-abrahao"><strong>Allan Pereira Abrahão</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://spring.io/projects/spring-boot">Spring Boot Website</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/all-an/api-login/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/all-an/api-login/pulls">Request Feature</a>
   </p>
 </div>
 
@@ -59,7 +58,7 @@
   <summary>Índice</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">Sobre o projeto</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -107,8 +106,8 @@ Use the `BLANK_README.md` to get started.
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [Java](https://nextjs.org/)
-* [Spring](https://reactjs.org/)
+* [Java](https://spring.io/projects/spring-boot)
+* [Spring](https://spring.io/projects/spring-boot)
 <!--
 * [Vue.js](https://vuejs.org/)
 * [Angular](https://angular.io/)
