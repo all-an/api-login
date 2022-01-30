@@ -1,5 +1,6 @@
 package com.api.login.controllers;
 
+import com.api.login.controllers.entities.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class TesteController {
 
     @PostMapping("/login")
-    public ResponseEntity<String> validariaLogin(@RequestBody ){
+    public ResponseEntity<String> validariaLogin(@RequestBody User user){
         return ResponseEntity.ok("Logou !");
     }
 
