@@ -107,6 +107,17 @@ Api-Login utilizando Java e Spring Boot
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+```json
+{
+    "Usuario{id=2, nomeUsuario='Allan', senha='test', logado=true, cargo='admin'}": {
+        "id": 2,
+        "nomeUsuario": "Allan",
+        "senha": "test",
+        "logado": true,
+        "funcao": "admin"
+    }
+}
+```
 
 
 ### Built With
