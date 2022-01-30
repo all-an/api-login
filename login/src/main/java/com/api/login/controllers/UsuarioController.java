@@ -6,19 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class UsuarioController {
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
-
-    @GetMapping
-    public List<Usuario> findAll(){
-        List<Usuario> resultado = usuarioRepositorio.findAll();
-        return resultado;
-    }
 
     @PostMapping("/usuarios/registro")
     public Status registraUsuario(@Valid @RequestBody Usuario novoUsuario) {
@@ -52,6 +45,23 @@ public class UsuarioController {
             }
         }
         return Status.FALHA;
+    }
+
+    @PostMapping("/usuarios/restrito")
+    public Map<Status, List<Usuario>> acessoRestritoAoAdmin(@Valid @RequestBody Usuario usuario) {
+        List<Usuario> usuarios = usuarioRepositorio.findAll();
+        Map<Status, List<Usuario>> retorno = new HashMap<>();
+        for (Usuario esteUsuario : usuarios) {
+            if (esteUsuario.equals(usuario) && esteUsuario.getFuncao().equals("admin")) {
+                usuario.setLogado(true);
+                usuarioRepositorio.save(usuario);
+                retorno.put(Status.SUCESSO, usuarios);
+                return retorno;
+            }
+        }
+        retorno.put(Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO, null);
+        usuarioRepositorio.save(usuario);
+        return retorno;
     }
 
     @PostMapping("/usuarios/logout")

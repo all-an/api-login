@@ -4,5 +4,6 @@ public enum Status {
 
     SUCESSO,
     USUARIO_JA_EXISTE,
-    FALHA
+    FALHA,
+    USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO
 }
