@@ -151,6 +151,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 Dependências:
 
+* JUnit
+* MockMvc
 * Spring Boot DevTools
 * Lombok
 * Spring Web
