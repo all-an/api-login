@@ -123,7 +123,7 @@ Api-Login utilizando Java e Spring Boot
 }]
 
 ```
-### Deleta Usuário
+### Deleta e atualiza (PUT) Usuário
 ```json
 
 [{

@@ -1,4 +1,4 @@
-package com.api.login.controllers.entities;
+package com.api.login.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

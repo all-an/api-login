@@ -1,6 +1,6 @@
-package com.api.login.controllers;
+package com.api.login.repositories;
 
-import com.api.login.controllers.entities.Usuario;
+import com.api.login.entities.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

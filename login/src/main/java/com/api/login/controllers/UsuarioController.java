@@ -1,7 +1,8 @@
 package com.api.login.controllers;
 
-import com.api.login.controllers.entities.Status;
-import com.api.login.controllers.entities.Usuario;
+import com.api.login.entities.Status;
+import com.api.login.entities.Usuario;
+import com.api.login.repositories.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -65,7 +66,7 @@ public class UsuarioController {
 
     //@PostMapping("/usuarios/admin")
     @RequestMapping(value = "/usuarios/", method = RequestMethod.GET)
-    public Map<Status, List<Usuario>> acessoRestritoAoAdmin(@Valid @RequestBody Usuario usuario) {
+    public Map<Status, List<Usuario>> visualizaTodosUsuarios(@Valid @RequestBody Usuario usuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
         Map<Status, List<Usuario>> retorno = new HashMap<>();
         for (Usuario esteUsuario : usuarios) {
