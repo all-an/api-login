@@ -29,6 +29,12 @@ public class Usuario {
     private @NotBlank boolean logado;
     private @NotBlank String funcao;
 
+    public Usuario(@NonNull String nomeUsuario, @NonNull String senha, String funcao) {
+        this.nomeUsuario = nomeUsuario;
+        this.senha = senha;
+        this.funcao = funcao;
+    }
+
     public long getId() {
         return id;
     }

@@ -4,6 +4,7 @@ import com.api.login.entities.Status;
 import com.api.login.entities.Usuario;
 import com.api.login.repositories.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -132,6 +133,7 @@ public class UsuarioController {
                     }else{
                     retorno.put(Status.SUCESSO, adminNovoUsuario.get(1));
                     usuarioRepositorio.delete(adminNovoUsuario.get(1));
+                        ResponseEntity.ok();
                     return retorno;
                 }
             }
