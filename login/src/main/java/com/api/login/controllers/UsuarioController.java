@@ -94,7 +94,7 @@ public class UsuarioController {
         return Status.FALHA;
     }
 
-    @PostMapping("/usuarios/")
+    @DeleteMapping("/usuarios/todos")
     public Status deletaTodosUsuarios(@Valid @RequestBody Usuario usuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
         for (Usuario esteUsuario : usuarios) {
@@ -111,6 +111,37 @@ public class UsuarioController {
         return Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO;
     }
 
+    @RequestMapping(value = "/usuarios/", method = RequestMethod.DELETE)
+    public Map<Status, Usuario> deletarUmUsuario(@Valid @RequestBody List<Usuario> adminNovoUsuario ) {
+        List<Usuario> usuarios = usuarioRepositorio.findAll();
+
+        Map<Status, Usuario> retorno = new HashMap<>();
+
+        for (Usuario esteUsuario : usuarios) {
+            if (usuarios.contains(adminNovoUsuario.get(0)) && esteUsuario.getFuncao().equals("admin") &&
+                    esteUsuario.equals(adminNovoUsuario.get(0))) {
+                esteUsuario.setLogado(true);
+                usuarioRepositorio.save(adminNovoUsuario.get(0));
+                //for (Usuario usuario : usuarios) {
+                    if (!usuarios.contains(adminNovoUsuario.get(1))) {
+                        retorno.put(Status.USUARIO_NAO_EXISTE, null);
+                        System.out.println("Usuario não existe!");
+                        return retorno;
+                    }else{
+                    retorno.put(Status.SUCESSO, adminNovoUsuario.get(1));
+                    usuarioRepositorio.delete(adminNovoUsuario.get(1));
+                    return retorno;
+                }
+            }
+        }
+
+        adminNovoUsuario.get(0).setFuncao("comum(investigar)");
+        adminNovoUsuario.get(1).setFuncao("comum(investigar)");
+        retorno.put(Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO, null);
+        usuarioRepositorio.save(adminNovoUsuario.get(0));
+        usuarioRepositorio.save(adminNovoUsuario.get(1));
+        return retorno;
+    }
 
     @PostMapping("/usuarios/primeiroRegistro")
     public Status registraUsuario(@Valid @RequestBody Usuario novoUsuario) {
