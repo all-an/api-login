@@ -82,21 +82,21 @@
 
 ### Roadmap:
 
-- [x] ● Configurações iniciais
-- [x] ● Banco de Dados MySQL, conexão e afins
-- [x] ● Criação de todas as entidades
-- [ ] ● Mapeamento de requisições
-   - [x] ● GET restrito ao "admin"
-   - [x] ● POST cadastro usuários
-   - [x] ● extra - Usuário não pode se cadastrar se já existe no DB
-   - [x] ● Delete (Somente admin poderá deletar um usuário)
-   - [ ] ● Put (Somente admin poderá atualizar um usuário cadastrado)
-   - [x] ● "Usuário não possui esse nível de acesso"
-   - [ ] ●- Validar os casos de uso quando um funcionário tentar deletar, atualizar ou ler os registros
-- [ ] ● Cobertura de testes >= 85%
-- [x] ● Registros no banco de dados
-- [ ] ● Validação dos casos
-- [ ] ● Senha salva com criptografia
+- [x]  Configurações iniciais
+- [x]  Banco de Dados MySQL, conexão e afins
+- [x]  Criação de todas as entidades
+- [X]  Mapeamento de requisições
+   - [x]  GET restrito ao "admin"
+   - [x]  POST cadastro usuários
+   - [x]  extra - Usuário não pode se cadastrar se já existe no DB
+   - [x]  Delete (Somente admin poderá deletar um usuário)
+   - [X]  Put (Somente admin poderá atualizar um usuário cadastrado)
+   - [x]  "Usuário não possui esse nível de acesso"
+   - [x]  Validar os casos de uso quando um funcionário tentar deletar, atualizar ou ler os registros
+- [ ]  Cobertura de testes >= 85%
+- [x]  Registros no banco de dados
+- [ ]  Validação dos casos
+- [ ]  Senha salva com criptografia
   
 <!-- ABOUT THE PROJECT -->
 ## Sobre o projeto:
@@ -107,6 +107,8 @@ Api-Login utilizando Java e Spring Boot
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
+### Cadastra Usuário
 ```json
 
 [{
@@ -121,6 +123,23 @@ Api-Login utilizando Java e Spring Boot
 }]
 
 ```
+### Deleta Usuário
+```json
+
+[{
+    "nomeUsuario": "Allan",
+    "senha": "test",
+    "funcao": "admin"
+},
+    {
+        "id": 7,
+        "nomeUsuario": "Nelson",
+        "senha": "SenhaNelson",
+        "funcao": "comum"
+}]
+
+```
+
 
 
 ### Built With

@@ -143,6 +143,33 @@ public class UsuarioController {
         return retorno;
     }
 
+    @RequestMapping(value = "/usuarios/", method = RequestMethod.PUT)
+    public Map<Status, Usuario> atualizaUmUsuario(@Valid @RequestBody List<Usuario> adminNovoUsuario ) {
+        List<Usuario> usuarios = usuarioRepositorio.findAll();
+
+        Map<Status, Usuario> retorno = new HashMap<>();
+
+        for (Usuario esteUsuario : usuarios) {
+            if (usuarios.contains(adminNovoUsuario.get(0)) && esteUsuario.getFuncao().equals("admin") &&
+                    esteUsuario.equals(adminNovoUsuario.get(0))) {
+                esteUsuario.setLogado(true);
+                usuarioRepositorio.save(adminNovoUsuario.get(0));
+                //for (Usuario usuario : usuarios) {
+                    retorno.put(Status.SUCESSO, adminNovoUsuario.get(1));
+                    usuarioRepositorio.save(adminNovoUsuario.get(1));
+                    return retorno;
+                
+            }
+        }
+
+        adminNovoUsuario.get(0).setFuncao("comum(investigar)");
+        adminNovoUsuario.get(1).setFuncao("comum(investigar)");
+        retorno.put(Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO, null);
+        usuarioRepositorio.save(adminNovoUsuario.get(0));
+        usuarioRepositorio.save(adminNovoUsuario.get(1));
+        return retorno;
+    }
+
     @PostMapping("/usuarios/primeiroRegistro")
     public Status registraUsuario(@Valid @RequestBody Usuario novoUsuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
