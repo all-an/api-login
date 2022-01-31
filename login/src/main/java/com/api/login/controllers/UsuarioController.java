@@ -13,24 +13,6 @@ public class UsuarioController {
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
 
-    @PostMapping("/usuarios/registro")
-    public Status registraUsuario(@Valid @RequestBody Usuario novoUsuario) {
-        List<Usuario> usuarios = usuarioRepositorio.findAll();
-
-        System.out.println("Novo Usuario: " + novoUsuario.toString());
-
-        for (Usuario Usuario : usuarios) {
-            System.out.println("Registered Usuario: " + novoUsuario.toString());
-
-            if (Usuario.equals(novoUsuario)) {
-                System.out.println("Usuario já existe!");
-                return Status.USUARIO_JA_EXISTE;
-            }
-        }
-        usuarioRepositorio.save(novoUsuario);
-        return Status.SUCESSO;
-    }
-
     @PostMapping("/usuarios/registrar")
     public Map<Status, Usuario> adminRegistraUsuario(@Valid @RequestBody List<Usuario> adminNovoUsuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
@@ -104,9 +86,45 @@ public class UsuarioController {
         return Status.FALHA;
     }
 
+    @PostMapping("/usuarios/")
+    public Status deletaTodosUsuarios(@Valid @RequestBody Usuario usuario) {
+        List<Usuario> usuarios = usuarioRepositorio.findAll();
+        for (Usuario esteUsuario : usuarios) {
+            if (esteUsuario.equals(usuario) && esteUsuario.getFuncao().equals("admin")) {
+                usuario.setLogado(true);
+                usuarioRepositorio.save(usuario);
+                usuarioRepositorio.deleteAll();
+                return Status.SUCESSO;
+            }
+        }
+        usuarioRepositorio.save(usuario);
+        return Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO;
+    }
+
+    /*
+    @PostMapping("/usuarios/registro")
+    public Status registraUsuario(@Valid @RequestBody Usuario novoUsuario) {
+        List<Usuario> usuarios = usuarioRepositorio.findAll();
+
+        System.out.println("Novo Usuario: " + novoUsuario.toString());
+
+        for (Usuario Usuario : usuarios) {
+            System.out.println("Registered Usuario: " + novoUsuario.toString());
+
+            if (Usuario.equals(novoUsuario)) {
+                System.out.println("Usuario já existe!");
+                return Status.USUARIO_JA_EXISTE;
+            }
+        }
+        usuarioRepositorio.save(novoUsuario);
+        return Status.SUCESSO;
+    }
+    */
+
+    /*
     @DeleteMapping("/usuarios/todos")
     public Status deleteUsuarios() {
         usuarioRepositorio.deleteAll();
         return Status.SUCESSO;
-    }
+    }*/
 }

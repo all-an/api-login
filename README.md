@@ -108,18 +108,18 @@ Api-Login utilizando Java e Spring Boot
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ```json
-{
-    [{
-            "nomeUsuario": "Allan",
-            "senha": "test",
-            "funcao": "admin"
-        },
-        {
-            "nomeUsuario": "Maria",
-            "senha": "test2",
-            "funcao": "comum"
-    }]
-}
+
+[{
+        "nomeUsuario": "Allan",
+        "senha": "test",
+        "funcao": "admin"
+    },
+    {
+        "nomeUsuario": "Maria",
+        "senha": "test2",
+        "funcao": "comum"
+}]
+
 ```
 
 
