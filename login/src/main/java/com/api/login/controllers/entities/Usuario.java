@@ -63,7 +63,8 @@ public class Usuario {
         if (!(o instanceof Usuario)) return false;
         Usuario user = (Usuario) o;
         return Objects.equals(nomeUsuario, user.nomeUsuario) &&
-                Objects.equals(senha, user.senha);
+                Objects.equals(senha, user.senha) &&
+                Objects.equals(funcao, user.funcao);
     }
 
     @Override

@@ -89,14 +89,25 @@ public class UsuarioController {
     @PostMapping("/usuarios/")
     public Status deletaTodosUsuarios(@Valid @RequestBody Usuario usuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
+        System.out.println(usuarios.contains(usuario));
+        /*
+        if(usuarios.contains(usuario) && usuario.getFuncao().equals("admin")){
+            usuario.setLogado(true);
+            usuarioRepositorio.save(usuario);
+            usuarioRepositorio.deleteAll();
+            return Status.SUCESSO;
+        }*/
+
         for (Usuario esteUsuario : usuarios) {
-            if (esteUsuario.equals(usuario) && esteUsuario.getFuncao().equals("admin")) {
-                usuario.setLogado(true);
+            if (usuarios.contains(usuario) && esteUsuario.getFuncao().equals("admin") &&
+                    esteUsuario.equals(usuario)) {
+                esteUsuario.setLogado(true);
                 usuarioRepositorio.save(usuario);
                 usuarioRepositorio.deleteAll();
                 return Status.SUCESSO;
             }
         }
+        usuario.setFuncao("comum(fraude)");
         usuarioRepositorio.save(usuario);
         return Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO;
     }
