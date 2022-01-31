@@ -19,9 +19,10 @@ public class UsuarioController {
 
         Map<Status, Usuario> retorno = new HashMap<>();
 
-        for (Usuario admin : usuarios) {
-            if (admin.equals(adminNovoUsuario.get(0)) && admin.getFuncao().equals("admin")) {
-                adminNovoUsuario.get(0).setLogado(true);
+        for (Usuario esteUsuario : usuarios) {
+            if (usuarios.contains(adminNovoUsuario.get(0)) && esteUsuario.getFuncao().equals("admin") &&
+                    esteUsuario.equals(adminNovoUsuario.get(0))) {
+                esteUsuario.setLogado(true);
                 usuarioRepositorio.save(adminNovoUsuario.get(0));
                 for (Usuario usuario : usuarios) {
                     if (usuario.equals(adminNovoUsuario.get(1))) {
@@ -35,8 +36,12 @@ public class UsuarioController {
                 }
             }
         }
+
+        adminNovoUsuario.get(0).setFuncao("comum(investigar)");
+        adminNovoUsuario.get(1).setFuncao("comum(investigar)");
         retorno.put(Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO, null);
         usuarioRepositorio.save(adminNovoUsuario.get(0));
+        usuarioRepositorio.save(adminNovoUsuario.get(1));
         return retorno;
     }
 
@@ -44,14 +49,17 @@ public class UsuarioController {
     public Status loginUsuario(@Valid @RequestBody Usuario usuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
 
-        for (Usuario other : usuarios) {
-            if (other.equals(usuario)) {
-                usuario.setLogado(true);
+        for (Usuario outro : usuarios) {
+            if (usuarios.contains(usuario) && outro.getFuncao().equals(usuario)
+                    && outro.getFuncao().equals("comum") || outro.getFuncao().equals("admin")) {
+                outro.setLogado(true);
                 usuarioRepositorio.save(usuario);
                 System.out.println(usuario);
                 return Status.SUCESSO;
             }
         }
+        usuario.setFuncao("comum(investigar)");
+        usuarioRepositorio.save(usuario);
         return Status.FALHA;
     }
 
@@ -89,15 +97,6 @@ public class UsuarioController {
     @PostMapping("/usuarios/")
     public Status deletaTodosUsuarios(@Valid @RequestBody Usuario usuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
-        System.out.println(usuarios.contains(usuario));
-        /*
-        if(usuarios.contains(usuario) && usuario.getFuncao().equals("admin")){
-            usuario.setLogado(true);
-            usuarioRepositorio.save(usuario);
-            usuarioRepositorio.deleteAll();
-            return Status.SUCESSO;
-        }*/
-
         for (Usuario esteUsuario : usuarios) {
             if (usuarios.contains(usuario) && esteUsuario.getFuncao().equals("admin") &&
                     esteUsuario.equals(usuario)) {
@@ -107,13 +106,13 @@ public class UsuarioController {
                 return Status.SUCESSO;
             }
         }
-        usuario.setFuncao("comum(fraude)");
+        usuario.setFuncao("comum(investigar)");
         usuarioRepositorio.save(usuario);
         return Status.USUARIO_NAO_POSSUI_NIVEL_DE_ACESSO;
     }
 
-    /*
-    @PostMapping("/usuarios/registro")
+
+    @PostMapping("/usuarios/primeiroRegistro")
     public Status registraUsuario(@Valid @RequestBody Usuario novoUsuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
 
@@ -130,7 +129,6 @@ public class UsuarioController {
         usuarioRepositorio.save(novoUsuario);
         return Status.SUCESSO;
     }
-    */
 
     /*
     @DeleteMapping("/usuarios/todos")
