@@ -89,7 +89,7 @@
    - [x] ● GET restrito ao "admin"
    - [x] ● POST cadastro usuários
    - [x] ● extra - Usuário não pode se cadastrar se já existe no DB
-   - [ ] ● Delete (Somente admin poderá deletar um usuário)
+   - [x] ● Delete (Somente admin poderá deletar um usuário)
    - [ ] ● Put (Somente admin poderá atualizar um usuário cadastrado)
    - [x] ● "Usuário não possui esse nível de acesso"
    - [ ] ●- Validar os casos de uso quando um funcionário tentar deletar, atualizar ou ler os registros
