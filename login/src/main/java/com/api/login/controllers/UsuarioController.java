@@ -63,7 +63,8 @@ public class UsuarioController {
         return Status.FALHA;
     }
 
-    @PostMapping("/usuarios/admin")
+    //@PostMapping("/usuarios/admin")
+    @RequestMapping(value = "/usuarios/", method = RequestMethod.GET)
     public Map<Status, List<Usuario>> acessoRestritoAoAdmin(@Valid @RequestBody Usuario usuario) {
         List<Usuario> usuarios = usuarioRepositorio.findAll();
         Map<Status, List<Usuario>> retorno = new HashMap<>();
@@ -158,7 +159,7 @@ public class UsuarioController {
                     retorno.put(Status.SUCESSO, adminNovoUsuario.get(1));
                     usuarioRepositorio.save(adminNovoUsuario.get(1));
                     return retorno;
-                
+
             }
         }
 

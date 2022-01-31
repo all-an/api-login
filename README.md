@@ -95,7 +95,7 @@
    - [x]  Validar os casos de uso quando um funcionário tentar deletar, atualizar ou ler os registros
 - [ ]  Cobertura de testes >= 85%
 - [x]  Registros no banco de dados
-- [ ]  Validação dos casos
+- [x]  Validação dos casos
 - [ ]  Senha salva com criptografia
   
 <!-- ABOUT THE PROJECT -->
