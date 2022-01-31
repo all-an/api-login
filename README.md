@@ -93,10 +93,10 @@
    - [X]  Put (Somente admin poderá atualizar um usuário cadastrado)
    - [x]  "Usuário não possui esse nível de acesso"
    - [x]  Validar os casos de uso quando um funcionário tentar deletar, atualizar ou ler os registros
-- [ ]  Cobertura de testes >= 85%
+- [ ]  C̶o̶b̶e̶r̶t̶u̶r̶a̶ d̶e̶ t̶e̶s̶t̶e̶s̶ >=̶ 8̶5̶%̶
 - [x]  Registros no banco de dados
 - [x]  Validação dos casos
-- [ ]  Senha salva com criptografia
+- [ ]  S̶e̶n̶h̶a̶ s̶a̶l̶v̶a̶ c̶o̶m̶ c̶r̶i̶p̶t̶o̶g̶r̶a̶f̶i̶a̶
   
 <!-- ABOUT THE PROJECT -->
 ## Sobre o projeto:
