@@ -37,7 +37,7 @@
     <img src="/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Api de Login feita em Java e Spring Boots</h3>
+  <h3 align="center">Api de Login feita em Java e Spring Boot</h3>
 
   <p align="center">
     <br />
