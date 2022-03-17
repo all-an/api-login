@@ -29,7 +29,7 @@ public class UsuarioController {
                 for (Usuario usuario : usuarios) {
                     if (usuario.equals(adminNovoUsuario.get(1))) {
                         retorno.put(Status.USUARIO_JA_EXISTE, null);
-                        System.out.println("Usuario já existe!");
+                        System.out.println("Usuario já existe! ");
                         return retorno;
                     }
                     retorno.put(Status.SUCESSO, adminNovoUsuario.get(1));
